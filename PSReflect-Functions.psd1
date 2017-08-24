@@ -90,6 +90,7 @@ FunctionsToExport = @(
     'DsEnumerateDomainTrusts',
     'DsGetSiteName',
     'DuplicateToken',
+    'EnumProcessModules',
     'EnumerateSecurityPackages',
     'FreeContextBuffer',
     'GetCurrentProcess',
@@ -223,7 +224,7 @@ PrivateData = @{
         # LicenseUri = ''
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/jaredcatkinson/PSReflect-Functions'
+        ProjectUri = 'https://github.com/gkantsidis/PSReflect-Functions.git'
 
         # A URL to an icon representing this module.
         # IconUri = ''
