@@ -64,7 +64,7 @@ function EnumProcessModules
 
     if ($number_of_bytes_required -gt $cb)
     {
-        Write-Debug -Message "Size is small "
+        Write-Debug -Message "Size is small; we will retry with bigger buffer"
 
         [System.Runtime.InteropServices.Marshal]::FreeHGlobal($module)
         $cb = 2*$number_of_bytes_required
@@ -86,7 +86,7 @@ function EnumProcessModules
 
     $result = New-Object -TypeName 'IntPtr[]' -ArgumentList $entries
     for ($i = 0; $i -lt $entries; $i++) {
-        $modulePtr = [System.Runtime.InteropServices.Marshal]::ReadIntPtr($module, $i * $pointer_size)
+        $modulePtr = [Syste m.Runtime.InteropServices.Marshal]::ReadIntPtr($module, $i * $pointer_size)
         $result[$i] = $modulePtr
     }
 
