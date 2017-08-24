@@ -122,6 +122,14 @@
 
     (func kernel32 GetCurrentProcess ([IntPtr]) @() -EntryPoint GetCurrentProcess),
 
+    (func kernel32 GetModuleHandle ([IntPtr]) @(
+        [string] # _In_opt_ LPCTSTR lpModuleName
+    ) -EntryPoint GetModuleHandle -SetLastError),
+
+    (func kernel32 GetModuleHandlePointer ([IntPtr]) @(
+        [IntPtr] # _In_opt_ LPCTSTR lpModuleName ---- used to pass the nullptr
+    ) -EntryPoint GetModuleHandle -SetLastError),
+
     (func kernel32 GetProcAddress ([IntPtr]) @(
         [IntPtr], #_In_ HMODULE hModule
         [string]  #_In_ LPCSTR  lpProcName

@@ -86,7 +86,7 @@ function EnumProcessModules
 
     $result = New-Object -TypeName 'IntPtr[]' -ArgumentList $entries
     for ($i = 0; $i -lt $entries; $i++) {
-        $modulePtr = [Syste m.Runtime.InteropServices.Marshal]::ReadIntPtr($module, $i * $pointer_size)
+        $modulePtr = [System.Runtime.InteropServices.Marshal]::ReadIntPtr($module, $i * $pointer_size)
         $result[$i] = $modulePtr
     }
 
