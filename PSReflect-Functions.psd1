@@ -75,6 +75,7 @@ FunctionsToExport = @(
     'CloseServiceHandle',
     'ConvertSidToStringSid',
     'CreateFile',
+    'CreateRemoteThread',
     'CreateToolhelp32Snapshot',
     'CryptCATAdminAcquireContext',
     'CryptCATAdminAcquireContext2',
