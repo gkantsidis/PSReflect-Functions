@@ -95,6 +95,7 @@ FunctionsToExport = @(
     'FreeContextBuffer',
     'GetCurrentProcess',
     'GetIpNetTable',
+    'GetModuleBaseName',
     'GetProcAddress',
     'GetThreadContext',
     'GetTokenInformation',

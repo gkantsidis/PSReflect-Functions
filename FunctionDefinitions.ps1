@@ -491,16 +491,16 @@
     #region psapi
     (func psapi EnumProcessModules ([bool]) @(
         [IntPtr],                 # _In_  HANDLE  hProcess,
-        [IntPtr].MakeByRefType(), # _Out_ HMODULE *lphModule,
+        [IntPtr],                 # _Out_ HMODULE *lphModule,
         [UInt32],                 # _In_  DWORD   cb,
         [Int32].MakeByRefType()   # _Out_ LPDWORD lpcbNeeded
     ) -EntryPoint EnumProcessModules -SetLastError),
-    (func psapi GetModuleBaseNameA ([UInt32]) @(
-        [IntPtr],                 # _In_     HANDLE  hProcess,
-        [IntPtr],                 # _In_opt_ HMODULE hModule,
-        [IntPtr].MakeByRefType(), # _Out_    LPTSTR  lpBaseName,
-        [UInt32]                  #_In_     DWORD   nSize
-    ) -EntryPoint GetModuleBaseNameA -SetLastError)
+    (func psapi GetModuleBaseName ([UInt32]) @(
+        [IntPtr],                    # _In_     HANDLE  hProcess,
+        [IntPtr],                    # _In_opt_ HMODULE hModule,
+        [System.Text.StringBuilder], # _Out_    LPTSTR  lpBaseName,
+        [UInt32]                     # _In_     DWORD   nSize
+    ) -EntryPoint GetModuleBaseName -SetLastError)
     #endregion psapi
     #region samlib
     (func samlib SamCloseHandle ([Int32]) @(
