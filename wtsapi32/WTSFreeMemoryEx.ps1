@@ -44,6 +44,7 @@
     param
     (
         [Parameter(Mandatory = $true)]
+        #[ValidateSet("WTSTypeProcessInfoLevel0", "WTSTypeProcessInfoLevel1", "WTSTypeSessionInfoLevel1")]
         [ValidateSet()]
         [string]
         $WTSTypeClass,
